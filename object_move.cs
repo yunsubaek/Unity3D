@@ -2,22 +2,20 @@ using UnityEngine;
 using System.Collections;
 public class Sample : MonoBehaviour
 {
-    private float rotationspeed;
     private float Speed;
     public bool chk;
     public Vector3 goal;
     RaycastHit hit;
     void Start()
     {
-        rotationspeed = 0.2f;
-        Speed = 10.1f;
+        Speed = 0.1f;
         chk = false;
     }
     void Update()
     {
         if (chk)
         {
-            transform.position = Vector3.MoveTowards(transform.position, goal, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, goal, Speed);
 
             if (goal == transform.position)
                 chk = false;
