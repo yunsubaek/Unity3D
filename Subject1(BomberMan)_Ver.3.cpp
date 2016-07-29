@@ -1,5 +1,5 @@
-//ºó °ø°£¿¡¸¸ Ãß°¡µÇµµ·Ï ¼³Á¤
-//0:ºó°ø°£,1:ÆÄ±«ºÒ°¡´Éº®,2:»ç¿ëÀÚ,3:¸ó½ºÅÍ,4:ÆøÅº,5:ÆÄ±«°¡´Éº®
+//ë¹ˆ ê³µê°„ì—ë§Œ ì¶”ê°€ë˜ë„ë¡ ì„¤ì •
+//0:ë¹ˆê³µê°„,1:íŒŒê´´ë¶ˆê°€ëŠ¥ë²½,2:ì‚¬ìš©ì,3:ëª¬ìŠ¤í„°,4:í­íƒ„,5:íŒŒê´´ê°€ëŠ¥ë²½
 #pragma warning(disable:4996)
 #include<iostream>
 #include<time.h>
@@ -65,7 +65,7 @@ public:
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				//¸ó½ºÅÍ¿Í »ç¿ëÀÚ°¡ ¿·ÀÚ¸® -> Á¾·á
+				//ëª¬ìŠ¤í„°ì™€ ì‚¬ìš©ìê°€ ì˜†ìë¦¬ -> ì¢…ë£Œ
 				if (Map[Monster_list[i].Pos_y + idx[j]][Monster_list[i].Pos_x + idy[j]] == 2)
 				{
 					Output();
@@ -199,7 +199,7 @@ public:
 		{
 			Bomb bomb;
 			bomb.Frame_Cnt = -1;
-			//¹Ù¶óº¸´Â ¹æÇâÀÇ Á¤º¸
+			//ë°”ë¼ë³´ëŠ” ë°©í–¥ì˜ ì •ë³´
 			if (Look_Dir == 1 && Map[player.Pos_y - 2][player.Pos_x - 1] == 0)
 				Map[player.Pos_y - 2][player.Pos_x - 1] = 4, bomb.Frame_Cnt = 0, bomb.Pos_x = player.Pos_x - 1, bomb.Pos_y = player.Pos_y - 2;
 			else if (Look_Dir == 2 && Map[player.Pos_y - 1][player.Pos_x - 2] == 0)
@@ -208,17 +208,17 @@ public:
 				Map[player.Pos_y][player.Pos_x - 1] = 4, bomb.Frame_Cnt = 0, bomb.Pos_x = player.Pos_x - 1, bomb.Pos_y = player.Pos_y;
 			else if (Look_Dir == 4 && Map[player.Pos_y - 1][player.Pos_x] == 0)
 				Map[player.Pos_y - 1][player.Pos_x] = 4, bomb.Frame_Cnt = 0, bomb.Pos_x = player.Pos_x, bomb.Pos_y = player.Pos_y - 1;
-			//¹Ù¶óº¸´Â ¹æÇâ¿¡ ÆøÅºÀÌ ¾øÀ¸¸é ¼³Ä¡
+			//ë°”ë¼ë³´ëŠ” ë°©í–¥ì— í­íƒ„ì´ ì—†ìœ¼ë©´ ì„¤ì¹˜
 			if (bomb.Frame_Cnt != -1)
 			{
 				Bomb_Size++;
 				Bomb_list.push_back(bomb);
 			}
 		}
-		//ÇÁ·¹ÀÓ¸¸ Áõ°¡
+		//í”„ë ˆì„ë§Œ ì¦ê°€
 		else if (Move_Dir == '2');
-		else printf("Àß¸øµÈ Å° ÀÔ·ÂÀÔ´Ï´Ù.");
-		//»ç¿ëÀÚ À§Ä¡ ÃÊ±âÈ­
+		else printf("ì˜ëª»ëœ í‚¤ ì…ë ¥ì…ë‹ˆë‹¤.");
+		//ì‚¬ìš©ì ìœ„ì¹˜ ì´ˆê¸°í™”
 		Map[player.Pos_y - 1][player.Pos_x - 1] = 2;
 		return player;
 	}
@@ -234,17 +234,17 @@ void Map_Init()
 	{
 		for (int j = 0; j < Map_Weight; j++)
 		{
-			//¸Ç À­ÁÙ, ¸Ç ¾Æ·§ÁÙÀÇ °æ¿ì 1
+			//ë§¨ ìœ—ì¤„, ë§¨ ì•„ë«ì¤„ì˜ ê²½ìš° 1
 			if (i == 0 || i == Map_Height - 1)
 			{
 				Map[i][j] = 1;
 			}
-			//¸Ç ¿ŞÂÊ, ¸Ç ¿À¸¥ÂÊÀÇ °æ¿ì 1
+			//ë§¨ ì™¼ìª½, ë§¨ ì˜¤ë¥¸ìª½ì˜ ê²½ìš° 1
 			else if (j == 0 || j == Map_Weight - 1)
 			{
 				Map[i][j] = 1;
 			}
-			//³ª¸ÓÁö °æ¿ì
+			//ë‚˜ë¨¸ì§€ ê²½ìš°
 			else
 			{
 				if (i % 2 == 0 && j % 2 == 0)
@@ -270,11 +270,11 @@ void Breakable_Wall_Init(time_t t)
 }
 void State()
 {
-	printf("°ÔÀÓÀ» ½ÃÀÛÇÏ·Á¸é 'Start'¸¦ ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´©¸£¼¼¿ä.\n");
+	printf("ê²Œì„ì„ ì‹œì‘í•˜ë ¤ë©´ 'Start'ë¥¼ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆ„ë¥´ì„¸ìš”.\n");
 	while (scanf("%s", &state))
 	{
 		system("cls");
-		printf("°ÔÀÓÀ» ½ÃÀÛÇÏ·Á¸é 'Start'¸¦ ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´©¸£¼¼¿ä.\n");
+		printf("ê²Œì„ì„ ì‹œì‘í•˜ë ¤ë©´ 'Start'ë¥¼ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆ„ë¥´ì„¸ìš”.\n");
 		if (!strcmp(state, "Start"))
 		{
 			printf("Start Game!\n");
@@ -285,12 +285,12 @@ void State()
 	{
 		for (int j = 0; j < Map_Weight; j++)
 		{
-			if ((i == j) && (j == 1))  printf("¡ä");
-			else if (Map[i][j] == 1)   printf("¡á");
-			else if (Map[i][j] == 3)   printf("¡Û");
-			else if (Map[i][j] == 4)   printf("¡Ş");
-			else if (Map[i][j] == 5)   printf("¡à");
-			else					   printf("¡¡");
+			if ((i == j) && (j == 1))  printf("â–½");
+			else if (Map[i][j] == 1)   printf("â– ");
+			else if (Map[i][j] == 3)   printf("â—‹");
+			else if (Map[i][j] == 4)   printf("â—‡");
+			else if (Map[i][j] == 5)   printf("â–¡");
+			else					   printf("ã€€");
 		}
 		printf("\n");
 	}
@@ -298,28 +298,28 @@ void State()
 void Output()
 {
 	system("cls");
-	//ÇÁ·¹ÀÓ Ä«¿îÆ®
+	//í”„ë ˆì„ ì¹´ìš´íŠ¸
 	printf("player.Frame_Cnt : %d\t\tPlayer Position : (%d,%d)\n", player.Frame_Cnt, player.Pos_y - 1, player.Pos_x - 1);
 	printf("Monster : %d\t\t\tBomb : %d\n", Monster_Size, Bomb_Size);
-	//¸ó½ºÅÍ´Â °¹¼ö¸¸Å­ ÇÁ·¹ÀÓ Ä«¿îÆ®
+	//ëª¬ìŠ¤í„°ëŠ” ê°¯ìˆ˜ë§Œí¼ í”„ë ˆì„ ì¹´ìš´íŠ¸
 	for (int i = 0; i < Map_Height; i++)
 	{
 		for (int j = 0; j < Map_Weight; j++)
 		{
-			//ÆÄ±« ºÒ°¡´ÉÇÑ º®
-			if (Map[i][j] == 1)           printf("¡á");
-			//»ç¿ëÀÚ À§Ä¡¸¦ ÂïÀ½
+			//íŒŒê´´ ë¶ˆê°€ëŠ¥í•œ ë²½
+			if (Map[i][j] == 1)           printf("â– ");
+			//ì‚¬ìš©ì ìœ„ì¹˜ë¥¼ ì°ìŒ
 			else if (Map[i][j] == 2)
 			{
-				if (Look_Dir == 1)        player.Frame_Cnt % 2 == 0 ? printf("¡â") : printf("¡ã");
-				else if (Look_Dir == 2)   player.Frame_Cnt % 2 == 0 ? printf("¢·") : printf("¢¸");
-				else if (Look_Dir == 3)   player.Frame_Cnt % 2 == 0 ? printf("¡ä") : printf("¡å");
-				else if (Look_Dir == 4)   player.Frame_Cnt % 2 == 0 ? printf("¢¹") : printf("¢º");
+				if (Look_Dir == 1)        player.Frame_Cnt % 2 == 0 ? printf("â–³") : printf("â–²");
+				else if (Look_Dir == 2)   player.Frame_Cnt % 2 == 0 ? printf("â—") : printf("â—€");
+				else if (Look_Dir == 3)   player.Frame_Cnt % 2 == 0 ? printf("â–½") : printf("â–¼");
+				else if (Look_Dir == 4)   player.Frame_Cnt % 2 == 0 ? printf("â–·") : printf("â–¶");
 			}
-			else if (Map[i][j] == 3)      player.Frame_Cnt % 2 == 0 ? printf("¡Û") : printf("¡Ü");
-			else if (Map[i][j] == 4)      player.Frame_Cnt % 2 == 0 ? printf("¡Ş") : printf("¡ß");
-			else if (Map[i][j] == 5)      printf("¡à");
-			else						  printf("¡¡");
+			else if (Map[i][j] == 3)      player.Frame_Cnt % 2 == 0 ? printf("â—‹") : printf("â—");
+			else if (Map[i][j] == 4)      player.Frame_Cnt % 2 == 0 ? printf("â—‡") : printf("â—†");
+			else if (Map[i][j] == 5)      printf("â–¡");
+			else						  printf("ã€€");
 		}
 		printf("\n");
 	}
@@ -341,18 +341,18 @@ int main()
 	while (Move_Dir = _getch())
 	{
 		player.Frame_Cnt++;
-		//20ÃÊ¸¶´Ù ¸ó½ºÅÍ Ãß°¡
+		//20ì´ˆë§ˆë‹¤ ëª¬ìŠ¤í„° ì¶”ê°€
 		if (player.Frame_Cnt % 20 == 0)	monster.Monster_Init(t);
-		//»ç¿ëÀÚ
+		//ì‚¬ìš©ì
 		player = player.Player_Move(player, Move_Dir);
-		//¸ó½ºÅÍ
+		//ëª¬ìŠ¤í„°
 		monster.Monster_Move(t);
 		monster.Monster_Attack();
-		//ÆøÅº
+		//í­íƒ„
 		bomb.Bomb_Cnt();
-		//Á¾·á È®ÀÎ
+		//ì¢…ë£Œ í™•ì¸
 		if (End_Flag)return 0;
-		//Ãâ·Â
+		//ì¶œë ¥
 		Output();
 	}
 	return 0;
