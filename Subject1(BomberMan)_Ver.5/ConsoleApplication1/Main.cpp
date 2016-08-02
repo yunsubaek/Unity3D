@@ -16,12 +16,14 @@ using namespace std;
 int main()
 {
 	Monster *monster					= new Monster();
-	Bomb *bomb							= new Bomb();
-	UnBreakable_Wall *unbreakable_wall	= new UnBreakable_Wall();
-	Breakable_Wall *breakable_wall		= new Breakable_Wall();
+	Bomb *bomb						= new Bomb();
+	UnBreakable_Wall *unbreakable_wall			= new UnBreakable_Wall();
+	Breakable_Wall *breakable_wall				= new Breakable_Wall();
 	Update *update						= new Update();
 	
-	Singleton::getInstance()->player->Pos_x = 2;			Singleton::getInstance()->player->Pos_y = 2;			Singleton::getInstance()->player->Frame_Cnt = 0;
+	Singleton::getInstance()->player->Pos_x = 2;
+	Singleton::getInstance()->player->Pos_y = 2;
+	Singleton::getInstance()->player->Frame_Cnt = 0;
 
 	unbreakable_wall->UnBreakable_Wall_Init();
 
@@ -36,18 +38,18 @@ int main()
 	while (Singleton::getInstance()->Move_Dir = _getch())
 	{
 		Singleton::getInstance()->player->Frame_Cnt++;
-		//20ÃÊ¸¶´Ù ¸ó½ºÅÍ Ãß°¡
+		//20ì´ˆë§ˆë‹¤ ëª¬ìŠ¤í„° ì¶”ê°€
 		if (Singleton::getInstance()->player->Frame_Cnt % 20 == 0)	monster->Monster_Init();
-		//»ç¿ëÀÚ
+		//ì‚¬ìš©ì
 		Singleton::getInstance()->player->Player_Move(Singleton::getInstance()->player);
-		//¸ó½ºÅÍ
+		//ëª¬ìŠ¤í„°
 		monster->Monster_Move(&Singleton::getInstance()->Monster_list);
 		monster->Monster_Attack(&Singleton::getInstance()->Monster_list);
-		//ÆøÅº
+		//í­íƒ„
 		bomb->Bomb_Cnt();
-		//Á¾·á È®ÀÎ
+		//ì¢…ë£Œ í™•ì¸
 		if (Singleton::getInstance()->End_Flag)return 0;
-		//Ãâ·Â
+		//ì¶œë ¥
 		update->Output();
 	}
 	return 0;
