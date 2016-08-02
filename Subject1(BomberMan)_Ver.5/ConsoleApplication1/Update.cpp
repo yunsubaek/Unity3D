@@ -8,7 +8,7 @@ void Update::State()
 {
 	char state[20];
 
-	printf("°ÔÀÓÀ» ½ÃÀÛÇÏ·Á¸é 'Start'¸¦ ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´©¸£¼¼¿ä.\n");
+	printf("ê²Œì„ì„ ì‹œì‘í•˜ë ¤ë©´ 'Start'ë¥¼ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆ„ë¥´ì„¸ìš”.\n");
 	while (scanf("%s", &state))
 	{
 		system("cls");
@@ -17,18 +17,18 @@ void Update::State()
 			printf("Start Game!\n");
 			break;
 		}
-		else printf("°ÔÀÓÀ» ½ÃÀÛÇÏ·Á¸é 'Start'¸¦ ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´©¸£¼¼¿ä.\n");
+		else printf("ê²Œì„ì„ ì‹œì‘í•˜ë ¤ë©´ 'Start'ë¥¼ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆ„ë¥´ì„¸ìš”.\n");
 	}
 	for (int i = 0; i < Map_Height; i++)
 	{
 		for (int j = 0; j < Map_Width; j++)
 		{
-			if ((i == j) && (j == 1))							 printf("¡ä");
-			else if (Singleton::getInstance()->Map[i][j] == 1)   printf("¡á");
-			else if (Singleton::getInstance()->Map[i][j] == 3)   printf("¡Û");
-			else if (Singleton::getInstance()->Map[i][j] == 4)   printf("¡Ş");
-			else if (Singleton::getInstance()->Map[i][j] == 5)   printf("¡à");
-			else												 printf("¡¡");
+			if ((i == j) && (j == 1))				printf("â–½");
+			else if (Singleton::getInstance()->Map[i][j] == 1)	printf("â– ");
+			else if (Singleton::getInstance()->Map[i][j] == 3)	printf("â—‹");
+			else if (Singleton::getInstance()->Map[i][j] == 4)	printf("â—‡");
+			else if (Singleton::getInstance()->Map[i][j] == 5)	printf("â–¡");
+			else							printf("ã€€");
 		}
 		printf("\n");
 	}
@@ -37,28 +37,28 @@ void Update::State()
 void Update::Output()
 {
 	system("cls");
-	//ÇÁ·¹ÀÓ Ä«¿îÆ®
+	//í”„ë ˆì„ ì¹´ìš´íŠ¸
 	printf("Player Frame : %d\t\tPlayer Position : (%d,%d)\n", Singleton::getInstance()->player->Frame_Cnt, Singleton::getInstance()->player->Pos_y - 1, Singleton::getInstance()->player->Pos_x - 1);
 	printf("Monster : %d\t\t\tBomb : %d\n", Singleton::getInstance()->Monster_Size, Singleton::getInstance()->Bomb_Size);
-	//¸ó½ºÅÍ´Â °¹¼ö¸¸Å­ ÇÁ·¹ÀÓ Ä«¿îÆ®
+	//ëª¬ìŠ¤í„°ëŠ” ê°¯ìˆ˜ë§Œí¼ í”„ë ˆì„ ì¹´ìš´íŠ¸
 	for (int i = 0; i < Map_Height; i++)
 	{
 		for (int j = 0; j < Map_Width; j++)
 		{
-			//ÆÄ±« ºÒ°¡´ÉÇÑ º®
-			if (Singleton::getInstance()->Map[i][j] == 1)           printf("¡á");
-			//»ç¿ëÀÚ À§Ä¡¸¦ ÂïÀ½
+			//íŒŒê´´ ë¶ˆê°€ëŠ¥í•œ ë²½
+			if (Singleton::getInstance()->Map[i][j] == 1)           printf("â– ");
+			//ì‚¬ìš©ì ìœ„ì¹˜ë¥¼ ì°ìŒ
 			else if (Singleton::getInstance()->Map[i][j] == 2)
 			{
-				if (Singleton::getInstance()->Look_Dir == 1)        Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("¡â") : printf("¡ã");
-				else if (Singleton::getInstance()->Look_Dir == 2)   Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("¢·") : printf("¢¸");
-				else if (Singleton::getInstance()->Look_Dir == 3)   Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("¡ä") : printf("¡å");
-				else if (Singleton::getInstance()->Look_Dir == 4)   Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("¢¹") : printf("¢º");
+				if (Singleton::getInstance()->Look_Dir == 1)        Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("â–³") : printf("â–²");
+				else if (Singleton::getInstance()->Look_Dir == 2)   Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("â—") : printf("â—€");
+				else if (Singleton::getInstance()->Look_Dir == 3)   Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("â–½") : printf("â–¼");
+				else if (Singleton::getInstance()->Look_Dir == 4)   Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("â–·") : printf("â–¶");
 			}
-			else if (Singleton::getInstance()->Map[i][j] == 3)      Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("¡Û") : printf("¡Ü");
-			else if (Singleton::getInstance()->Map[i][j] == 4)      Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("¡Ş") : printf("¡ß");
-			else if (Singleton::getInstance()->Map[i][j] == 5)      printf("¡à");
-			else													printf("¡¡");
+			else if (Singleton::getInstance()->Map[i][j] == 3)      Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("â—‹") : printf("â—");
+			else if (Singleton::getInstance()->Map[i][j] == 4)      Singleton::getInstance()->player->Frame_Cnt % 2 == 0 ? printf("â—‡") : printf("â—†");
+			else if (Singleton::getInstance()->Map[i][j] == 5)      printf("â–¡");
+			else							printf("ã€€");
 		}
 		printf("\n");
 	}
