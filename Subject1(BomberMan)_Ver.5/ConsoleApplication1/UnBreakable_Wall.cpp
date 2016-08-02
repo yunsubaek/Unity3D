@@ -9,12 +9,12 @@ void UnBreakable_Wall::UnBreakable_Wall_Init()
 	{
 		for (int j = 0; j < Map_Width; j++)
 		{
-			//¸Ç À­ÁÙ, ¸Ç ¾Æ·§ÁÙÀÇ °æ¿ì 1
-			if (i == 0 || i == Map_Height - 1)				Singleton::getInstance()->Map[i][j] = 1;
-			//¸Ç ¿ÞÂÊ, ¸Ç ¿À¸¥ÂÊÀÇ °æ¿ì 1
-			else if (j == 0 || j == Map_Width - 1)			Singleton::getInstance()->Map[i][j] = 1;
-			//³ª¸ÓÁö °æ¿ì
-			else if (i % 2 == 0 && j % 2 == 0)				Singleton::getInstance()->Map[i][j] = 1;
+			//ë§¨ ìœ—ì¤„, ë§¨ ì•„ëž«ì¤„ì˜ ê²½ìš° 1
+			if (i == 0 || i == Map_Height - 1)		Singleton::getInstance()->Map[i][j] = 1;
+			//ë§¨ ì™¼ìª½, ë§¨ ì˜¤ë¥¸ìª½ì˜ ê²½ìš° 1
+			else if (j == 0 || j == Map_Width - 1)		Singleton::getInstance()->Map[i][j] = 1;
+			//ë‚˜ë¨¸ì§€ ê²½ìš°
+			else if (i % 2 == 0 && j % 2 == 0)		Singleton::getInstance()->Map[i][j] = 1;
 		}
 	}
 }
