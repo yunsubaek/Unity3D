@@ -1,0 +1,17 @@
+﻿  UnBreakable_Wall.cpp
+  Singleton.cpp
+c:\users\yunsubaek_df\documents\visual studio 2015\projects\subject_001\subject_001\singleton.cpp(74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\yunsubaek_df\documents\visual studio 2015\projects\subject_001\subject_001\singleton.cpp(103): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Player.cpp
+  Boss.cpp
+  Bomb.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Object.cpp
+  Monster.cpp
+  Main.cpp
+  Item.cpp
+  Breakable_Wall.cpp
+  코드를 생성하고 있습니다...
+  Subject_001.vcxproj -> C:\Users\yunsubaek_df\Documents\Visual Studio 2015\Projects\Subject_001\Debug\Subject_001.exe
+  Subject_001.vcxproj -> C:\Users\yunsubaek_df\Documents\Visual Studio 2015\Projects\Subject_001\Debug\Subject_001.pdb (Full PDB)
