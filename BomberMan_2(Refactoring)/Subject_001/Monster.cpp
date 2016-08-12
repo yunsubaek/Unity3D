@@ -4,7 +4,6 @@
 
 Monster::Monster()
 {
-
 }
 
 Monster::Monster(int x, int y)
