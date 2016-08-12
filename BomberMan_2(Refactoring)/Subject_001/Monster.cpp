@@ -71,7 +71,12 @@ void Monster::Rand_Move()
 		Singleton::getSingleton().Delete(temp);
 		Set_Have_Bomb(true);
 	}
-	else Rand_Move();
+	else
+	{
+		bool Is_Move = false;
+		for (int i = 0; i < 4; i++)if (Singleton::getSingleton().Search(Get_X() + idx[i], Get_Y() + idy[i]) == -1)Is_Move = true;
+		if (Is_Move) Rand_Move();
+	}
 }
 
 void Monster::Set_Have_Bomb(bool have_bomb)
