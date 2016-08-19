@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
         //Move 
         transform.Translate(h * moveSpeed * Time.deltaTime, 0f, 0f);
         transform.Translate(0f, 0f, v * moveSpeed * Time.deltaTime);
+        //Rotation
+        transform.Rotate(new Vector3(Input.GetAxis("Mouse Y")*20f, Input.GetAxis("Mouse X")*20f, 0) * Time.deltaTime * turnSpeed);
     }
 
     void OnTriggerEnter(Collider other)
