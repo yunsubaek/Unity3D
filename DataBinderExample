@@ -1,0 +1,12 @@
+public class test : UIBase
+{
+    public override void OnOpened()
+    {
+        DataBinder = GlobalData.ProfileData.DataBinder;
+        GlobalData.ProfileData.NickName = "수정!";
+    }
+
+    public override void OnClosed()
+    {
+    }
+}
