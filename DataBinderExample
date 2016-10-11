@@ -10,3 +10,5 @@ public class test : UIBase
     {
     }
 }
+
+//ProfileData에 미리 프로퍼티를 만들어서 접근.
