@@ -11,4 +11,4 @@ Avoid : 구슬피하기 게임
 
   http://www.robertpenner.com/easing/easing_demo.html
 
-http://postfiles3.naver.net/20140117_290/thanksyo_1389929325404AGhFA_PNG/_2014-01-17__12.28.01.png?type=w3
+![alt tag](http://postfiles3.naver.net/20140117_290/thanksyo_1389929325404AGhFA_PNG/_2014-01-17__12.28.01.png?type=w3)
