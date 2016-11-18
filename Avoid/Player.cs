@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
         //Rotation
         transform.Rotate(new Vector3(Input.GetAxis("Mouse Y")*20f, Input.GetAxis("Mouse X")*20f, 0) * Time.deltaTime * turnSpeed);
     }
-
+    //void OnTriggerStay 하면 상태를 실시간으로 확인
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("player_"))
